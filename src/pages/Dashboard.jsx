@@ -1,13 +1,15 @@
-import { usePageTitle } from "../hooks"
-import { DashboardMenu } from "../components/layouts"
+import { usePageTitle, useRootAddClass } from "../hooks"
+import { DashboardMenu, DashboardHeader } from "../components/layouts"
 
 function Dashboard() {
   usePageTitle("Dashboard")
+  useRootAddClass(["grid", "grid-cols-3"])
   return (
-    <div>
+    <>
+      <DashboardHeader />
       <DashboardMenu />
       <div>Dashboard Content</div>
-    </div>
+    </>
   )
 }
 
