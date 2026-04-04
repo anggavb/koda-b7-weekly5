@@ -1,3 +1,8 @@
+/**
+ * A reusable Button component that accepts a variant prop to determine its styling.
+ * @param {{ variant?: "primary" | "secondary" | "success" | "danger" }} props.variant 
+ * @returns {JSX.Element}
+ */
 function Button({ variant = "primary" }) {
   const variants = {
     primary: "bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded",
