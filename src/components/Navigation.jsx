@@ -15,7 +15,7 @@ function Navigation({ to, children }) {
         `group flex items-center gap-4 py-3.5 px-5 rounded-lg font-medium transition-all duration-200 ease-in-out ${
           isActive
             ? "bg-blue-700 text-white hover:bg-gray-200 hover:text-blue-700"
-            : "text-gray-700 hover:bg-gray-200"
+            : "text-gray-500 hover:bg-gray-200"
         }`
       }
     >
