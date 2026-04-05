@@ -1,6 +1,7 @@
 /**
  * A reusable Button component that accepts a variant prop to determine its styling.
- * @param {{ variant?: "primary" | "secondary" | "success" | "danger" }} props.variant 
+ * @param {Object} props
+ * @param {string} props.variant - The variant of the button (e.g., "primary", "secondary", "success", "danger").
  * @returns {JSX.Element}
  */
 function Button({ variant = "primary" }) {

@@ -1,3 +1,7 @@
+/**
+ * DashboardHeader component that renders the header for the dashboard layout.
+ * @returns {JSX.Element}
+ */
 function DashboardHeader() {
   return (
     <header className="col-span-3 flex justify-between items-center py-4 px-8 bg-white border-b border-gray-200 sticky top-0 z-10 h-17.5">

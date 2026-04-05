@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 /**
  * Set the page title
- * @param {string} title 
+ * @param {string} title - The title to be set for the page
  * @return {void}
  */
 const usePageTitle = (title) => {
