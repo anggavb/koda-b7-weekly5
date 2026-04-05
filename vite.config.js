@@ -9,9 +9,9 @@ export default defineConfig({
     alias: {
       '@': '/src',
       '@components': '/src/components',
-      '@layouts': '/src/components/layouts',
       '@hooks': '/src/hooks',
       '@pages': '/src/pages',
+      '@utils': '/src/utils',
     },
   },
 })
