@@ -22,7 +22,7 @@ export default [
   },
   {
     name: 'Top Up',
-    to: `${prefix}/topup`,
+    to: `${prefix}/top-up`,
     icon: TopUpIcon,
     class: 'fill-gray-600 group-aria-[current=page]:fill-current group-hover:fill-blue-800',
   },

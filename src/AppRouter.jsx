@@ -10,7 +10,7 @@ function AppRouter() {
         <Route index element={ <Dashboard /> } />
         <Route path="transfer" element={ <Transfer /> } />
         <Route path="history" element={ <History /> } />
-        <Route path="topup" element={ <TopUp /> } />
+        <Route path="top-up" element={ <TopUp /> } />
         <Route path="profile" element={ <Profile /> } />
       </Route>
     </Routes>
