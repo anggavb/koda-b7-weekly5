@@ -1,4 +1,4 @@
-import { DashboardIcon, TransferIcon, HistoryIcon, TopUpIcon, ProfileIcon, LogoutIcon } from '@components/icons';
+import { DashboardIcon, TransferIcon, HistoryIcon, TopUpIcon, ProfileIcon, LogoutIcon } from '@components/atoms/icons';
 
 const prefix = '/admin'
 export default [
