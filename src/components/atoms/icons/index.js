@@ -12,6 +12,12 @@ import StonkIcon from './StonkIcon';
 import DownStonkIcon from './DownStonkIcon';
 import MoneyInsertIcon from "./MoneyInsertIcon";
 
+import BRIIcon from "./BRIIcon";
+import DanaIcon from "./DanaIcon";
+import BCAIcon from "./BCAIcon";
+import GopayIcon from "./GopayIcon";
+import OVOIcon from "./OVOIcon";
+
 export {
   DashboardIcon,
   TransferIcon,
@@ -24,5 +30,10 @@ export {
   ExpenseIcon,
   StonkIcon,
   DownStonkIcon,
-  MoneyInsertIcon
+  MoneyInsertIcon,
+  BRIIcon,
+  DanaIcon,
+  BCAIcon,
+  GopayIcon,
+  OVOIcon,
 }
