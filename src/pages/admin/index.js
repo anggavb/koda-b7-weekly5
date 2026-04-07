@@ -4,6 +4,7 @@ import History from "./History";
 import Profile from "./Profile";
 import TopUp from "./TopUp";
 import Transfer from "./Transfer";
+import TransferDetail from "./TransferDetail";
 
 export {
   AdminWrapper,
@@ -12,4 +13,5 @@ export {
   Profile,
   TopUp,
   Transfer,
+  TransferDetail,
 }
