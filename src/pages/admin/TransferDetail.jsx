@@ -1,9 +1,30 @@
+import { useState } from "react";
+
 import { TransferIcon } from "@components/atoms/icons";
+import {
+  PinModal,
+  TransferFailedModal,
+  TransferSuccessModal,
+} from "@components/organisms";
 import { usePageTitle } from "@hooks";
 import { profile } from "@/assets/images";
-import { Link } from "react-router";
+import { Button } from "@components/atoms/";
 
 function TransferDetail() {
+  const [pinModal, setPinModal] = useState(false);
+  const [transferFailedModal, setTransferFailedModal] = useState(false);
+  const [transferSuccessModal, setTransferSuccessModal] = useState(false);
+
+  const onNextPinModal = () => {
+    setPinModal(false);
+    setTransferFailedModal(true);
+  };
+
+  const onNextPinModalSuccess = () => {
+    setTransferFailedModal(false);
+    setTransferSuccessModal(true);
+  };
+
   usePageTitle("Transfer Detail");
   return (
     <main className="md:col-span-1 lg:col-span-2 flex flex-col gap-4 p-3 sm:p-6 sm:gap-6 md:p-8 xl:p-10 2xl:p-12">
@@ -11,7 +32,6 @@ function TransferDetail() {
         <TransferIcon className="fill-blue-600" />
         Transfer Money
       </h2>
-
       {/* Stepper */}
       <div className="flex flex-wrap items-center gap-4 mb-4 sm:mb-10 sm:flex-nowrap sm:gap-6">
         <div className="flex items-center gap-3 text-neutral-800 font-medium text-sm sm:text-base">
@@ -35,7 +55,6 @@ function TransferDetail() {
           <span>Finish</span>
         </div>
       </div>
-
       <section>
         <div className="flex flex-col p-4 bg-white border border-neutral-200 rounded-xl sm:p-6 lg:p-8 gap-6 sm:gap-8">
           <div className="flex flex-col gap-2">
@@ -112,14 +131,25 @@ function TransferDetail() {
             ></textarea>
           </div>
 
-          <Link
-            to="transfer-pin"
+          <Button
+            onClick={() => setPinModal(true)}
             className="flex items-center justify-center w-full px-6 py-3.5 mt-2 sm:mt-4 text-[0.9rem] sm:text-base font-semibold sm:font-bold text-white transition-all duration-200 bg-blue-900 border-none rounded-lg cursor-pointer hover:bg-blue-950 hover:shadow-[0_4px_12px_rgba(30,58,138,0.3)] active:scale-[0.98]"
           >
             Submit & Transfer
-          </Link>
+          </Button>
         </div>
       </section>
+      <PinModal isOpen={pinModal} onNext={() => onNextPinModal()} />
+      <TransferFailedModal
+        isOpen={transferFailedModal}
+        onTryAgain={() => onNextPinModalSuccess()}
+        onBack={() => setTransferFailedModal(false)}
+      />
+      <TransferSuccessModal
+        isOpen={transferSuccessModal}
+        onDone={() => setTransferSuccessModal(false)}
+        onTransferAgain={() => setTransferSuccessModal(false)}
+      />
     </main>
   );
 }
