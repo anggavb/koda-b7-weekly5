@@ -1,6 +1,14 @@
+import { replace } from 'react-router';
 import { DashboardIcon, TransferIcon, HistoryIcon, TopUpIcon, ProfileIcon, LogoutIcon } from '@components/atoms/icons';
 
 const prefix = '/admin'
+const handleLogout = (e) => {
+  const confirmLogout = window.confirm("Are you sure you want to logout?");
+  if (!confirmLogout) e.preventDefault();
+
+  localStorage.removeItem('credential');
+  return replace('/');
+}
 export default [
   {
     name: 'Dashboard',
@@ -34,8 +42,9 @@ export default [
   },
   {
     name: 'Logout',
-    to: `${prefix}/logout`,
+    to: `/`,
     icon: LogoutIcon,
+    onclick: handleLogout,
     class: 'stroke-red-600 group-hover:stroke-red-800',
   },
 ]
