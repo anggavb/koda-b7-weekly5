@@ -62,7 +62,7 @@ function Dashboard() {
           <div className="h-full p-4 bg-white border border-gray-200 sm:p-6">
             <div className="flex flex-col items-start gap-2 mb-6 sm:flex-row sm:items-center sm:justify-between">
               <h3 className="text-lg font-semibold">Transaction History</h3>
-              <a href="./history.html" className="text-sm font-medium text-blue-600">See All</a>
+              <Link to="history" className="text-sm font-medium text-blue-600">See All</Link>
             </div>
             
             <div className="flex flex-col gap-5">
