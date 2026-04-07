@@ -4,6 +4,9 @@ import HistoryIcon from "./HistoryIcon";
 import TopUpIcon from "./TopUpIcon";
 import ProfileIcon from "./ProfileIcon";
 import LogoutIcon from "./LogoutIcon";
+import MailIcon from "./MailIcon";
+import PasswordIcon from "./PasswordIcon";
+import EyeSlashIcon from "./EyeSlashIcon";
 
 import BalanceIcon from "./BalanceIcon";
 import IncomeIcon from './IncomeIcon';
@@ -17,6 +20,9 @@ import DanaIcon from "./DanaIcon";
 import BCAIcon from "./BCAIcon";
 import GopayIcon from "./GopayIcon";
 import OVOIcon from "./OVOIcon";
+
+import GoogleIcon from "./GoogleIcon";
+import FacebookIcon from "./FacebookIcon";
 
 export {
   DashboardIcon,
@@ -36,4 +42,9 @@ export {
   BCAIcon,
   GopayIcon,
   OVOIcon,
+  GoogleIcon,
+  FacebookIcon,
+  MailIcon,
+  PasswordIcon,
+  EyeSlashIcon,
 }
