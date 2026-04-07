@@ -5,9 +5,11 @@ import { NavLink } from "react-router";
  * @param {Object} props
  * @param {string} props.to - The destination path for the navigation link.
  * @param {React.ReactNode} props.children - The content to be displayed inside the navigation link.
+ * @param {function} [props.onClick] - Optional click handler for the navigation link.
+ * @param {boolean} [props.end=false] - Whether to apply active styling only when the location is exactly matched.
  * @returns {JSX.Element}
  */
-function Navigation({ to, children, onClick = () => {} }) {
+function Navigation({ to, children, onClick = () => {}, end = false }) {
   return (
     <NavLink
       to={to}
@@ -19,7 +21,7 @@ function Navigation({ to, children, onClick = () => {} }) {
         }`
       }
       onClick={onClick}
-      end
+      end={end}
     >
       {children}
     </NavLink>
