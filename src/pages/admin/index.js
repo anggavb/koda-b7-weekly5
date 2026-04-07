@@ -1,4 +1,3 @@
-import AdminWrapper from "./AdminWrapper";
 import Dashboard from "./Dashboard";
 import History from "./History";
 import Profile from "./Profile";
@@ -7,7 +6,6 @@ import Transfer from "./Transfer";
 import TransferDetail from "./TransferDetail";
 
 export {
-  AdminWrapper,
   Dashboard,
   History,
   Profile,
