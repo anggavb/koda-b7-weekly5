@@ -1,11 +1,22 @@
-import { Outlet } from "react-router"
-import { DashboardMenu, DashboardHeader } from "@components/organisms"
+import { Outlet, useNavigate } from "react-router";
+import { DashboardMenu, DashboardHeader } from "@components/organisms";
+import { useEffect, useRef } from "react";
 
 /**
  * AdminWrapper component that serves as a layout wrapper for admin-related pages.
  * @returns {JSX.Element}
  */
 function AdminWrapper() {
+  const navigate = useNavigate();
+  const userLoggedIn = JSON.parse(localStorage.getItem("userLoggedIn")) || null;
+  const credentials = useRef(userLoggedIn);
+
+  useEffect(() => {
+    if (!credentials.current) {
+      navigate("/", { replace: true });
+    }
+  }, [navigate]);
+
   return (
     <div className="min-h-screen bg-slate-50 text-neutral-800 overflow-x-hidden">
       <DashboardHeader />
@@ -14,7 +25,7 @@ function AdminWrapper() {
         <Outlet />
       </div>
     </div>
-  )
+  );
 }
 
-export default AdminWrapper
+export default AdminWrapper;
