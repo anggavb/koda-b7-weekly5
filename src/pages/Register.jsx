@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import { useForm } from "react-hook-form";
 
 import { AuthLayout } from "@components/templates";
 import { AuthHeader } from "@components/organisms";
@@ -17,30 +18,23 @@ const Register = () => {
 
   const navigate = useNavigate();
 
-  const handleRegister = (e) => {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
-    const formData = new FormData(e.target);
-    const email = formData.get("email");
-    const password = formData.get("password");
-    const confirmPassword = formData.get("confirm-password");
-
-    console.log(email, password, confirmPassword);
-
-    if (password !== confirmPassword) {
-      alert("Passwords do not match!");
-      return;
-    }
-
+  const handleRegister = (data) => {
     const credentials = JSON.parse(localStorage.getItem("credentials") || "[]");
 
-    if (credentials.some((cred) => cred.email === email)) {
+    if (credentials.some((cred) => cred.email === data.email)) {
       alert("Email already registered!");
       return;
     }
 
-    const name = email.split("@")[0];
-    credentials.push({ email, password, name });
+    const name = data.email.split("@")[0];
+    credentials.push({ email: data.email, password: data.password, name });
     localStorage.setItem("credentials", JSON.stringify(credentials));
 
     alert("Registration successful! You can now log in.");
@@ -78,36 +72,54 @@ const Register = () => {
         <span>Or</span>
       </div>
 
-      <form onSubmit={handleRegister} className="flex flex-col gap-4">
+      <form
+        onSubmit={handleSubmit(handleRegister)}
+        className="flex flex-col gap-4"
+      >
         <InputField
+          {...register("email", { required: true })}
           id="email"
           type="email"
           label="Email"
           name="email"
           placeholder="Enter Your Email"
           iconLeft={<MailIcon />}
-          required
         />
+        {errors.email && (
+          <span className="text-red-500 text-sm">Email is required</span>
+        )}
 
         <InputField
+          {...register("password", { required: true })}
           id="password"
           name="password"
           label="Password"
           placeholder="Enter Your Password"
           iconLeft={<PasswordIcon />}
           isPassword
-          required
         />
+        {errors.password && (
+          <span className="text-red-500 text-sm">Password is required</span>
+        )}
 
         <InputField
+          {...register("confirmPassword", {
+            required: true,
+            validate: (value) =>
+              value === watch("password") || "Passwords do not match",
+          })}
           id="confirm-password"
           label="Confirm Password"
-          name="confirm-password"
+          name="confirmPassword"
           placeholder="Enter Your Password Again"
           iconLeft={<PasswordIcon />}
           isPassword
-          required
         />
+        {errors.confirmPassword && (
+          <span className="text-red-500 text-sm">
+            {errors.confirmPassword.message || "Confirm Password is required"}
+          </span>
+        )}
 
         <Button type="submit">Register</Button>
       </form>
