@@ -2,6 +2,7 @@ import { useState } from "react";
 import profile from "@/assets/images/Ellipse 185.png";
 import { Link } from "react-router";
 import { LogoutIcon } from "@components/atoms/icons";
+import { listMenus } from "@utils";
 
 /**
  * DashboardHeader component that renders the header for the dashboard layout.
@@ -11,6 +12,8 @@ import { LogoutIcon } from "@components/atoms/icons";
 function DashboardHeader() {
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const credentials = JSON.parse(localStorage.getItem("userLoggedIn")) || null;
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-100 flex items-center justify-between h-14 px-3 py-2 bg-white border-b border-gray-200 sm:h-16 sm:px-4 sm:py-3 md:h-17.5 md:px-8 md:py-4">
       <div className="flex items-center gap-2.5 text-xl font-semibold text-blue-600 font-logo">
@@ -21,13 +24,13 @@ function DashboardHeader() {
         className="relative flex items-center gap-3 cursor-pointer"
         onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
       >
-        <span className="hidden text-sm font-medium text-gray-500 sm:inline">
+        <span className="hidden text-sm font-medium text-gray-500 md:inline">
           {credentials ? credentials.name : "Ghaluh Wizard"}
         </span>
         <img
           src={profile}
           alt="Profile"
-          className="w-9 h-9 rounded-full object-cover"
+          className="hidden md:inline w-9 h-9 rounded-full object-cover"
         />
         <svg
           width="14"
@@ -35,6 +38,7 @@ function DashboardHeader() {
           viewBox="0 0 14 8"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className="hidden md:inline"
         >
           <path
             d="M13 1L7 7L1 1"
@@ -45,6 +49,17 @@ function DashboardHeader() {
           />
         </svg>
       </div>
+      <svg
+        viewBox="0 0 100 80"
+        width="40"
+        height="40"
+        className="fill-blue-600 md:hidden cursor-pointer"
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+      >
+        <rect width="80" height="10"></rect>
+        <rect y="20" width="80" height="10"></rect>
+        <rect y="40" width="80" height="10"></rect>
+      </svg>
 
       {isProfileMenuOpen && (
         <div className="absolute top-full right-4 bg-white border border-[#e5e5e5] rounded-xl shadow-[0_10px_25px_rgba(0,0,0,0.05)] w-50 p-2 flex flex-col z-1000">
@@ -74,6 +89,21 @@ function DashboardHeader() {
           >
             <LogoutIcon className="stroke-red-600" /> Keluar
           </Link>
+        </div>
+      )}
+
+      {isMobileMenuOpen && (
+        <div className="absolute top-full right-0 bg-white border border-[#e5e5e5] rounded-xl shadow-[0_10px_25px_rgba(0,0,0,0.05)] w-50 p-2 flex flex-col z-1000">
+          {listMenus.map((menu) => (
+            <Link
+              key={menu.name}
+              to={menu.to}
+              onClick={menu.onclick}
+              className={menu.class}
+            >
+              {menu.name}
+            </Link>
+          ))}
         </div>
       )}
     </header>
