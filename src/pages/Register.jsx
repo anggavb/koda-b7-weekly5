@@ -72,7 +72,7 @@ const Register = () => {
         <p>
           Have An Account?{" "}
           <a
-            href="./login.html"
+            href="/"
             className="font-semibold transition-colors text-blue-700 hover:underline"
           >
             Login
