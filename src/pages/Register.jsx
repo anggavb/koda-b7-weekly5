@@ -15,7 +15,10 @@ import { usePageTitle } from "@hooks";
 const Register = () => {
   usePageTitle("Register");
   return (
-    <AuthLayout imageSrc="/wallet-hand.png" imageAlt="3D Hand holding a wallet">
+    <AuthLayout
+      imageSrc="/3d-hand-making-cashless-payment-from-smartphone 1 copy.png"
+      imageAlt="3D Hand holding a wallet"
+    >
       <AuthHeader
         title="Start Accessing Banking Needs With All Devices and All Platforms With 30.000+ Users"
         subtitle="Transfering money is easier than ever, you can access Zwallet wherever you are. Desktop, laptop, mobile phone? we cover all of that for you!"
