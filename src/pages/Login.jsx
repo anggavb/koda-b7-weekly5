@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
 
 import { AuthLayout } from "@components/templates";
 import { AuthHeader } from "@components/organisms";
@@ -40,7 +41,7 @@ const Login = () => {
     );
 
     if (!user) {
-      alert("Invalid email or password!");
+      toast.error("Invalid email or password!");
       return;
     }
 
@@ -140,6 +141,7 @@ const Login = () => {
           </a>
         </p>
       </nav>
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
     </AuthLayout>
   );
 };

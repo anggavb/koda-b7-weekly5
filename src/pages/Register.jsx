@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
 
 import { AuthLayout } from "@components/templates";
 import { AuthHeader } from "@components/organisms";
@@ -31,7 +32,7 @@ const Register = () => {
     const credentials = JSON.parse(localStorage.getItem("credentials") || "[]");
 
     if (credentials.some((cred) => cred.email === data.email)) {
-      alert("Email already registered!");
+      toast.error("Email already registered!");
       return;
     }
 
@@ -39,10 +40,11 @@ const Register = () => {
     credentials.push({ email: data.email, password: data.password, name });
     localStorage.setItem("credentials", JSON.stringify(credentials));
 
-    alert("Registration successful! You can now log in.");
+    toast.success("Registration successful! You can now log in.");
 
-    // Redirect to admin page after registration
-    navigate("/", { replace: true });
+    setTimeout(() => {
+      navigate("/login", { replace: true });
+    }, 1500);
   };
 
   return (
@@ -145,6 +147,7 @@ const Register = () => {
           </a>
         </p>
       </nav>
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
     </AuthLayout>
   );
 };
