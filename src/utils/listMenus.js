@@ -8,7 +8,8 @@ const handleLogout = (e) => {
   if (!confirmLogout) return;
 
   localStorage.removeItem('userLoggedIn');
-  return replace('/');
+  replace('/');
+  return;
 }
 export default [
   {
