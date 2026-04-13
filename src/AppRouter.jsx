@@ -8,12 +8,13 @@ import {
   Transfer,
   TransferDetail,
 } from "@pages/admin";
-import { Login, Register } from "@pages";
+import { Login, Register, Landing } from "@pages";
 
 function AppRouter() {
   return (
     <Routes>
-      <Route index element={<Login />} />
+      <Route index element={<Landing />} />
+      <Route path="login" element={<Login />} />
       <Route path="register" element={<Register />} />
       <Route path="admin" element={<AdminWrapper />}>
         <Route index element={<Dashboard />} />
