@@ -3,5 +3,5 @@ import useCheckLogin from "./useCheckLogin";
 
 export {
   usePageTitle,
-  useCheckLogin
+  useCheckLogin,
 }

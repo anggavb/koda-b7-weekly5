@@ -4,19 +4,20 @@ import { useSelector } from "react-redux";
 
 const useCheckLogin = () => {
   const navigate = useNavigate();
-  const location = useLocation();
+  const currentPath = useLocation().pathname;
   const { users } = useSelector((state) => state.users);
   const { user: userLoggedIn } = useSelector((state) => state.userLogin);
 
   useEffect(() => {
-    if (!users.some((user) => user.id === userLoggedIn.id)) {
-      if (location.pathname.includes("admin")) {
-        return navigate("/", { replace: true });
-      }
+    const publicPaths = ["/login", "/register", "/", "/enter-pin", ""];
+
+    if (publicPaths.includes(currentPath)) {
       return;
+    } else if (userLoggedIn.id === 0) {
+      return navigate("/", { replace: true });
     }
-    return navigate("/admin", { replace: true });
-  }, [users, userLoggedIn.id, navigate, location.pathname]);
+    // return navigate("/admin", { replace: true });
+  }, [users, userLoggedIn.id, navigate, currentPath]);
 }
 
 export default useCheckLogin
