@@ -9,8 +9,10 @@ import {
   TransferDetail,
 } from "@pages/admin";
 import { Login, Register, Landing, EnterPin } from "@pages";
+import { useCheckLogin } from "@hooks";
 
 function AppRouter() {
+  useCheckLogin();
   return (
     <Routes>
       <Route index element={<Landing />} />
