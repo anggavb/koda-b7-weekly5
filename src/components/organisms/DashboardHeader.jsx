@@ -1,6 +1,7 @@
 import { useState } from "react";
 import profile from "@/assets/images/Ellipse 185.png";
 import { Link } from "react-router";
+import { useSelector } from "react-redux";
 import { LogoutIcon } from "@components/atoms/icons";
 import { listMenus } from "@utils";
 
@@ -10,8 +11,8 @@ import { listMenus } from "@utils";
  */
 
 function DashboardHeader() {
+  const { user: userLoggedIn } = useSelector((state) => state.userLogin);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
-  const credentials = JSON.parse(localStorage.getItem("userLoggedIn")) || null;
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -25,7 +26,7 @@ function DashboardHeader() {
         onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
       >
         <span className="hidden text-sm font-medium text-gray-500 md:inline">
-          {credentials ? credentials.name : "Ghaluh Wizard"}
+          {userLoggedIn.name || "noname"}
         </span>
         <img
           src={profile}
