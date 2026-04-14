@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
+import { useDispatch, useSelector } from "react-redux";
 
 import { AuthLayout } from "@components/templates";
 import { AuthHeader } from "@components/organisms";
@@ -13,6 +14,7 @@ import {
   PasswordIcon,
 } from "@components/atoms/icons";
 import { usePageTitle } from "@hooks";
+import { usersAction } from "@redux/slices/users";
 
 const Login = () => {
   usePageTitle("Login");
@@ -23,35 +25,22 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const navigate = useNavigate();
-  const goToDashboard = () => {
-    localStorage.setItem(
-      "userLoggedIn",
-      JSON.stringify({
-        name: "Angga Vb",
-        email: "anggavb8@gmail.com",
-      }),
-    );
-    navigate("/admin", { replace: true });
-  };
-  const handleLogin = (data) => {
-    const credentials = JSON.parse(localStorage.getItem("credentials") || "[]");
-    const user = credentials.find(
-      (cred) => cred.email === data.email && cred.password === data.password,
-    );
+  const { users } = useSelector((state) => state.users);
+  const dispatch = useDispatch();
 
-    if (!user) {
-      toast.error("Invalid email or password!");
+  const navigate = useNavigate();
+  const handleLogin = (data) => {
+    if (users && users.length) {
+      const user = users.find(
+        (user) => user.email === data.email && user.password === data.password,
+      );
+
+      dispatch(usersAction.login(user));
+      navigate("/admin", { replace: true });
       return;
     }
 
-    localStorage.setItem(
-      "userLoggedIn",
-      JSON.stringify({ email: user.email, name: user.name }),
-    );
-
-    // Redirect to admin page after login
-    navigate("/admin", { replace: true });
+    toast.error("Invalid email or password");
   };
 
   return (
@@ -65,10 +54,8 @@ const Login = () => {
       />
 
       <div className="flex flex-col gap-4 mt-2">
-        <SocialButton icon={<GoogleIcon />} onClick={() => goToDashboard()}>
-          Sign In With Google
-        </SocialButton>
-        <SocialButton icon={<FacebookIcon />} onClick={() => goToDashboard()}>
+        <SocialButton icon={<GoogleIcon />}>Sign In With Google</SocialButton>
+        <SocialButton icon={<FacebookIcon />}>
           Sign In With Facebook
         </SocialButton>
       </div>

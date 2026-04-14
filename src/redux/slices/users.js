@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   users: [],
+  userIdLoggedIn: 0,
   lastId: 1,
 };
 
@@ -19,6 +20,9 @@ const usersSlice = createSlice({
       state.users.push(newUser);
       state.lastId++;
     },
+    login: (state, { payload }) => {
+      state.userIdLoggedIn = payload.id
+    }
   },
 });
 
