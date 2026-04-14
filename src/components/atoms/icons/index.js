@@ -37,6 +37,7 @@ import ShieldIcon from './ShieldIcon';
 import DownloadIcon from './DownloadIcon';
 
 import StarIcon from "./StarIcon";
+import SpinnerIcon from "./SpinnerIcon";
 
 export {
   DashboardIcon,
@@ -72,5 +73,6 @@ export {
   HeadphonesIcon,
   ShieldIcon,
   DownloadIcon,
-  StarIcon
+  StarIcon,
+  SpinnerIcon
 }
