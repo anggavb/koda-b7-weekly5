@@ -5,6 +5,7 @@ import TopUp from "./TopUp";
 import Transfer from "./Transfer";
 import TransferDetail from "./TransferDetail";
 import ProfileChangePassword from "./ProfileChangePassword";
+import ProfileChangePin from "./ProfileChangePin";
 
 export {
   Dashboard,
@@ -14,4 +15,5 @@ export {
   Transfer,
   TransferDetail,
   ProfileChangePassword,
+  ProfileChangePin
 }

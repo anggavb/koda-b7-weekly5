@@ -8,6 +8,7 @@ import {
   Transfer,
   TransferDetail,
   ProfileChangePassword,
+  ProfileChangePin,
 } from "@pages/admin";
 import { Login, Register, Landing, EnterPin } from "@pages";
 import { useCheckLogin } from "@hooks";
@@ -31,6 +32,7 @@ function AppRouter() {
         <Route path="profile">
           <Route index element={<Profile />} />
           <Route path="change-password" element={<ProfileChangePassword />} />
+          <Route path="change-pin" element={<ProfileChangePin />} />
         </Route>
       </Route>
     </Routes>
