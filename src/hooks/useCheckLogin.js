@@ -9,7 +9,7 @@ const useCheckLogin = () => {
   const { user: userLoggedIn } = useSelector((state) => state.userLogin);
 
   useEffect(() => {
-    const publicPaths = ["/login", "/register", "/", "/enter-pin", ""];
+    const publicPaths = ["/login", "/register", "/", "/enter-pin", "/forgot-password", ""];
 
     if (publicPaths.includes(currentPath)) {
       return;
