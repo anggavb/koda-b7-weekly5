@@ -13,11 +13,11 @@ const useCheckLogin = () => {
 
     if (publicPaths.includes(currentPath)) {
       return;
-    } else if (userLoggedIn.id === 0) {
+    } else if (!userLoggedIn) {
       return navigate("/", { replace: true });
     }
     // return navigate("/admin", { replace: true });
-  }, [users, userLoggedIn.id, navigate, currentPath]);
+  }, [users, userLoggedIn, navigate, currentPath]);
 }
 
 export default useCheckLogin

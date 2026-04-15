@@ -26,7 +26,7 @@ function DashboardHeader() {
         onClick={() => setIsProfileMenuOpen(!isProfileMenuOpen)}
       >
         <span className="hidden text-sm font-medium text-gray-500 md:inline">
-          {userLoggedIn.name || "noname"}
+          {userLoggedIn?.name || "noname"}
         </span>
         <img
           src={profile}

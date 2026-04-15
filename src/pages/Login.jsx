@@ -30,12 +30,17 @@ const Login = () => {
 
   const navigate = useNavigate();
   const handleLogin = (data) => {
-    if (users && users.length) {
-      const user = users.find(
-        (user) => user.email === data.email && user.password === data.password,
+    const user = users.find(
+      (user) => user.email === data.email && user.password === data.password,
+    );
+    if (data && user) {
+      dispatch(
+        userLoginAction.login({
+          id: user.id,
+          name: user.name,
+          email: user.email,
+        }),
       );
-
-      dispatch(userLoginAction.login(user));
       navigate("/admin", { replace: true });
       toast.success("Login successful!");
       return;

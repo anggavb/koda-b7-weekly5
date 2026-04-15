@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 
 import { usePageTitle } from "@hooks";
 import { ProfileIcon } from "@components/atoms/icons";
@@ -11,7 +12,6 @@ import { Button } from "@components/atoms";
 
 import { userLoginAction } from "@redux/slices/userLogin";
 import { usersAction } from "@redux/slices/userRegistered";
-import { toast } from "react-toastify";
 
 function Profile() {
   const [avatarPreview, setAvatarPreview] = useState(profile);
@@ -24,7 +24,6 @@ function Profile() {
     reset,
   } = useForm();
 
-  const { users } = useSelector((state) => state.users);
   const { user: userLogin } = useSelector((state) => state.userLogin);
   const dispatch = useDispatch();
 
@@ -51,11 +50,7 @@ function Profile() {
     };
 
     dispatch(userLoginAction.updated(updatedUser));
-
-    const updatedUsers = users.map((user) =>
-      user.id === updatedUser.id ? { ...user, ...updatedUser } : user,
-    );
-    dispatch(usersAction.updateUser(updatedUsers));
+    dispatch(usersAction.updateUser(updatedUser));
     toast.success("Profile updated successfully");
     reset();
   };
