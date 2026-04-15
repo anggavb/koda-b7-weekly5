@@ -17,6 +17,9 @@ const userLoginSlice = createSlice({
       state.user.name = payload.name,
       state.user.email = payload.email
     },
+    updated: (state, { payload }) => {
+      state.user = { ...state.user, ...payload }
+    },
     logout: (state) => {
       state.user = initialState.user
     }

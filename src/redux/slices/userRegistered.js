@@ -18,7 +18,13 @@ const usersSlice = createSlice({
         password: payload.password,
       };
       state.users.push(newUser);
-    }
+    },
+    updateUser: (state, { payload }) => {
+      const userIndex = state.users.findIndex((user) => user.id === payload.id);
+      if (userIndex !== -1) {
+        state.users[userIndex] = { ...state.users[userIndex], ...payload };
+      }
+    },
   },
 });
 
