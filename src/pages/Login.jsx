@@ -42,7 +42,7 @@ const Login = () => {
         }),
       );
       navigate("/admin", { replace: true });
-      toast.success("Login successful!");
+      toast.success(`Welcome back, ${user.name}!`);
       return;
     }
 
