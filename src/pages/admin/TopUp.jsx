@@ -133,7 +133,7 @@ function TopUp() {
             <div className="form-group">
               <label className="form-label">Amount</label>
               <p className="text-sm text-gray-500 mt-0.5 mb-2">
-                Type the amount you want to transfer to your e-wallet account
+                Type the amount you want to transfer to your Kasvior account
               </p>
               <div className="form-input">
                 <svg
