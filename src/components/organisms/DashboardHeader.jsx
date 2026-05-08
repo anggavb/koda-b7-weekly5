@@ -41,7 +41,7 @@ function DashboardHeader() {
         onClick={() => navigate("/")}
         className="cursor-pointer flex items-center gap-2.5 text-xl font-semibold text-blue-600 font-logo"
       >
-        <img src="/money-wallet.png" alt="wallet" />
+        <img src="/money-wallet-black.png" alt="wallet" width="100" />
       </div>
       <div
         className="relative flex items-center gap-3 cursor-pointer"
