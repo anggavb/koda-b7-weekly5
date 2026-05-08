@@ -193,7 +193,7 @@ function TopUp() {
               </h3>
 
               <div className="flex items-center justify-between mb-3.5 text-sm sm:text-base">
-                <span className="font-normal text-neutral-800">Order</span>
+                <span className="font-normal text-neutral-800">Amount</span>
                 <span className="font-semibold text-neutral-800">
                   {formatRupiah(watchNominal) || 0}
                 </span>
