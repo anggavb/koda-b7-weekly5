@@ -12,7 +12,7 @@ const Footer = () => {
                 alt="wallet"
                 className="w-12.5 h-12.5"
               />
-              <span>E-Wallet</span>
+              <span>Kasvior</span>
             </div>
             <p className="mt-6 text-[0.95rem] font-normal opacity-70 leading-relaxed">
               Clarity gives you the blocks and components you need to create a

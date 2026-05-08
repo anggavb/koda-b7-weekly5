@@ -4,7 +4,7 @@ const AuthHeader = ({ title, subtitle }) => {
       <header className="mb-2">
         <div className="flex items-center gap-2.5 text-xl font-semibold text-blue-700 font-logo">
           <img src="/money-wallet.png" alt="wallet" className="w-8 h-8" />
-          <span>E-Wallet</span>
+          <span>Kasvior</span>
         </div>
       </header>
 

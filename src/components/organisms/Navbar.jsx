@@ -38,7 +38,7 @@ const Navbar = () => {
             alt="wallet"
             className="w-8 h-8 drop-shadow-sm"
           />
-          <span>E-Wallet</span>
+          <span>Kasvior</span>
         </div>
         <nav>
           <div className="flex items-center gap-2 sm:gap-4">

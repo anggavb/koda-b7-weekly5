@@ -42,7 +42,7 @@ function DashboardHeader() {
         className="cursor-pointer flex items-center gap-2.5 text-xl font-semibold text-blue-600 font-logo"
       >
         <img src="/money-wallet.png" alt="wallet" width="32" />
-        <span>E-Wallet</span>
+        <span>Kasvior</span>
       </div>
       <div
         className="relative flex items-center gap-3 cursor-pointer"
