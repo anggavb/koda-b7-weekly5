@@ -7,12 +7,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 mb-10 gap-11 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.5fr]">
           <div className="max-w-full sm:max-w-66.25">
             <div className="flex items-center gap-2.5 text-xl font-semibold font-logo">
-              <img
-                src="/money-wallet.png"
-                alt="wallet"
-                className="w-12.5 h-12.5"
-              />
-              <span>Kasvior</span>
+              <img src="/money-wallet.png" alt="wallet" className="h-12.5" />
             </div>
             <p className="mt-6 text-[0.95rem] font-normal opacity-70 leading-relaxed">
               Clarity gives you the blocks and components you need to create a

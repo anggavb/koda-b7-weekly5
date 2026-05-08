@@ -36,9 +36,8 @@ const Navbar = () => {
           <img
             src="/money-wallet.png"
             alt="wallet"
-            className="w-8 h-8 drop-shadow-sm"
+            className="h-8 drop-shadow-sm"
           />
-          <span>Kasvior</span>
         </div>
         <nav>
           <div className="flex items-center gap-2 sm:gap-4">
