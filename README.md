@@ -1,16 +1,135 @@
-# React + Vite
+# Kasvior 💳
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Image Description](./public/money-wallet-black.png#gh-light-mode-only)
+![Image Description](./public/money-wallet.png#gh-dark-mode-only)
 
-Currently, two official plugins are available:
+**Kasvior** is a modern e-wallet web application focused on helping users manage their finances more efficiently and intuitively.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The name **Kasvior** comes from:
 
-## React Compiler
+* **Kas** → financial cash flow / money
+* **Savior** → helping users manage money better
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Kasvior is designed with a clean fintech experience inspired by premium digital banking applications.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+
+* 🔐 User Authentication
+* 💸 Send & Receive Money
+* 📊 Transaction History
+* 💼 Balance Management
+* 📱 Responsive Mobile-First UI
+* ⚡ Fast Performance with Vite
+* 🎨 Modern Fintech Design
+* 🌙 Clean & Minimal Dashboard
+
+---
+
+## 🛠 Tech Stack
+
+| Technology  | Description                        |
+| ----------- | ---------------------------------- |
+| React.js    | Frontend Library                   |
+| Redux       | Global State Management            |
+| Zustand     | Lightweight Local State Management |
+| TailwindCSS | Utility-First CSS Framework        |
+| Vite        | Frontend Build Tool                |
+
+---
+
+## 📦 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/anggavb/kasvior.git
+```
+
+Go to project directory:
+
+```bash
+cd kasvior
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
+
+```bash
+npm run dev
+```
+
+---
+
+## 📁 Project Structure
+
+```bash
+public/
+src/
+├── assets/
+├── components/
+│   ├── atoms/
+│   ├── molecules/
+│   ├── organisms/
+│   └── templates/
+├── hooks/
+├── layouts/
+├── pages/
+├── redux/
+├── utils/
+├── zustand/
+└── globals.css
+└── main.jsx
+```
+
+---
+
+## 🎨 Design Philosophy
+
+Kasvior focuses on:
+
+* Simplicity
+* Financial clarity
+* Smooth user experience
+* Modern fintech aesthetics
+* Fast interaction performance
+
+The UI approach combines minimalist layouts with premium banking-inspired visuals.
+
+---
+
+## 🚀 Future Improvements
+
+* QR Payment
+* Dark Mode
+* Multi-wallet Support
+* Budget Analytics
+* Expense Categorization
+* Real-time Notification
+* PWA Support
+* Biometric Authentication
+
+---
+
+## 📸 Preview
+
+Live Demo:
+[Kasvior Live App](https://e-wallet-react-one.vercel.app/)
+
+---
+
+## 📄 License
+
+This project is created for personal learning and portfolio purposes.
+
+---
+
+## 👨‍💻 Developer
+
+Built with passion using React ecosystem and modern frontend architecture.

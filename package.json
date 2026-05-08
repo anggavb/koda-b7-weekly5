@@ -1,7 +1,7 @@
 {
-  "name": "koda-b7-weekly5",
+  "name": "kasvior-wallet-app",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
